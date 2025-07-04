@@ -1,4 +1,5 @@
 {% extends 'books/base.html' %}
+
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-6">
@@ -9,17 +10,49 @@
             <div class="card-body">
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
+
+                    <!-- Loop through all form fields except 'categories' -->
+                    {% for field in form %}
+                        {% if field.name != 'categories' %}
+                            <div class="mb-3">
+                                {{ field.label_tag }} {{ field }}
+                                {% if field.help_text %}
+                                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                    <div class="text-danger">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    <!-- Custom rendering for categories -->
+                    <div class="mb-3">
+                        <label class="form-label">Categories:</label>
+                        {% for checkbox in form.categories %}
+                            <div class="form-check">
+                                {{ checkbox.tag }} {{ checkbox.choice_label }}
+                            </div>
+                        {% endfor %}
+                        {% if form.categories.errors %}
+                            {% for error in form.categories.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
                     <div class="mt-3 d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Save</button>
                         <a href="{% url 'book_list' %}" class="btn btn-secondary">Cancel</a>
                     </div>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
 
 {% comment %} {% extends 'books/base.html' %}
 {% block content %}

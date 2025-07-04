@@ -10,7 +10,10 @@ def book_create(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
         if form.is_valid():
+            book = form.save(commit=False)
+            book.user = request.user
             form.save()
+            form.save_m2m()
             return redirect('book_list')
     else:
         form = BookForm()

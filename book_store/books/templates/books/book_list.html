@@ -13,7 +13,14 @@
                 <h6 class="card-subtitle text-muted mb-2">{{ book.author }}</h6>
                 <p class="card-text">
                     <strong>Price:</strong> {{ book.price }}<br>
-                    <strong>Published:</strong> {{ book.published_date }}
+                    <strong>Published:</strong> {{ book.published_date }}<br>
+                    
+                    <strong>Categories:</strong>
+                    {% for category in book.categories.all %}
+                        {{ category.name }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        No categories
+                    {% endfor %}
                 </p>
             </div>
             <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
@@ -27,6 +34,7 @@
     {% endfor %}
 </div>
 {% endblock %}
+
 
 
 {% comment %} {% extends 'books/base.html' %}
