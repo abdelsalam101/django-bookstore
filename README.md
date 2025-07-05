@@ -66,7 +66,7 @@ Lab1/
    ```
    python manage.py migrate
 
-5. **5. Create a superuser (for admin access)**:
+5. **Create a superuser (for admin access)**:
    ```  
    python manage.py createsuperuser
 
@@ -78,20 +78,20 @@ Lab1/
    ```
    Open http://localhost:8000 in your browser.
 
-🔐 Authentication & Authorization
+## 🔐 Authentication & Authorization
 Users must log in to add or edit books.
 
 Certain views are restricted based on user permissions (e.g. only users with books.add_book permission can create books).
 
 Admin panel available at /admin.
 
-📸 Screenshots
+## 📸 Screenshots
 ![1](https://github.com/user-attachments/assets/114784a0-ddc8-433d-a7ec-8c4227ecf0e9)
 ![2](https://github.com/user-attachments/assets/ba1a7c46-3967-477d-9eec-aaf75dfa4f55)
 ![3](https://github.com/user-attachments/assets/a4a8bb7f-0e2c-4f65-a64a-a8549be1517c)
 ![4](https://github.com/user-attachments/assets/96d0dcc5-4144-452d-8e82-928a659ee6f4)
 
-📄 License
+## 📄 License
 This project is licensed under the MIT License. See LICENSE for details.
 
-Built with ❤️ using Django and Bootstrap.
+## Built with ❤️ using Django and Bootstrap.
