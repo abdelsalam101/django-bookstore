@@ -1,3 +1,4 @@
+<!-- books/templates/books/book_confirm_delete.html -->
 {% extends 'books/base.html' %}
 {% block content %}
 <div class="row justify-content-center">
@@ -10,7 +11,7 @@
                     {% csrf_token %}
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-danger">Yes, Delete</button>
-                        <a href="{% url 'book_list' %}" class="btn btn-secondary">Cancel</a>
+                        <a href="{% url 'books:book_list' %}" class="btn btn-secondary">Cancel</a>
                     </div>
                 </form>
             </div>

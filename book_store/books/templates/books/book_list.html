@@ -1,7 +1,7 @@
 {% extends 'books/base.html' %}
 {% block content %}
 <div class="text-center mb-4">
-    <a href="{% url 'book_create' %}" class="btn btn-primary">+ Add Book</a>
+    <a href="{% url 'books:book_create' %}" class="btn btn-primary">+ Add Book</a>
 </div>
 
 <div class="row justify-content-center g-4">
@@ -14,7 +14,6 @@
                 <p class="card-text">
                     <strong>Price:</strong> {{ book.price }}<br>
                     <strong>Published:</strong> {{ book.published_date }}<br>
-                    
                     <strong>Categories:</strong>
                     {% for category in book.categories.all %}
                         {{ category.name }}{% if not forloop.last %}, {% endif %}
@@ -24,8 +23,8 @@
                 </p>
             </div>
             <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
-                <a href="{% url 'book_edit' book.pk %}" class="btn btn-sm btn-outline-warning">Edit</a>
-                <a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                <a href="{% url 'books:book_edit' book.pk %}" class="btn btn-sm btn-outline-warning">Edit</a>
+                <a href="{% url 'books:book_delete' book.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
             </div>
         </div>
     </div>
@@ -34,7 +33,6 @@
     {% endfor %}
 </div>
 {% endblock %}
-
 
 
 {% comment %} {% extends 'books/base.html' %}

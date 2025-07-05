@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books'
+    'books',
+    'accounts'
+    
 ]
 
 MIDDLEWARE = [
@@ -80,6 +82,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Redirect after login
+LOGIN_REDIRECT_URL = '/books/'  # Or whatever your book list URL is
+LOGOUT_REDIRECT_URL = '/accounts/login/'  # Optional, but useful
 
 
 # Password validation
