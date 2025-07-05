@@ -91,7 +91,5 @@ Admin panel available at /admin.
 ![3](https://github.com/user-attachments/assets/a4a8bb7f-0e2c-4f65-a64a-a8549be1517c)
 ![4](https://github.com/user-attachments/assets/96d0dcc5-4144-452d-8e82-928a659ee6f4)
 
-## 📄 License
-This project is licensed under the MIT License. See LICENSE for details.
-
-## Built with ❤️ using Django and Bootstrap.
+```
+ Built with ❤️ using Django and Bootstrap.
