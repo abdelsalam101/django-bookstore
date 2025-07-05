@@ -36,13 +36,15 @@ A responsive Django-based web application to manage a bookstore. Users can add, 
 
 ## 📂 Project Structure
 
+```
 Lab1/
-├── book_store/ # Django project folder (settings, urls, wsgi, etc.)
-│ ├── books/ # App for managing books (views, models, forms, templates)
-│ ├── templates/ # Shared templates like base.html
-│ └── static/ # Static assets (CSS, JS, etc.)
-├── manage.py # Django management script
-└── lab_env/ # Virtual environment (excluded from version control)
+├── book_store/           # Django project folder (settings, urls, wsgi, etc.)
+│   ├── books/            # App for managing books (views, models, forms, templates)
+│   ├── templates/        # Shared templates like base.html
+│   └── static/           # Static assets (CSS, JS, etc.)
+├── manage.py             # Django management script
+└── lab_env/              # Virtual environment (excluded from version control)
+```
 
 
 ## 🧪 Setup Instructions
